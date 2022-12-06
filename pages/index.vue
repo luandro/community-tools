@@ -21,6 +21,7 @@
           autonomy
         </p>
       </div>
+      <FormsList />
       <ToolForms />
       <ToolsList />
     </div>

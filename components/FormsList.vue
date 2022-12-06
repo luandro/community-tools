@@ -1,38 +1,41 @@
 <template>
-  <!-- Card List Section -->
-  <section class="bg-gray-100 dark:bg-gray-900 py-10 px-12">
-    <!-- Card Grid -->
-    <div
-      class="grid grid-flow-row gap-8 text-neutral-600 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
+  <div class="ma-auto">
+    <button
+      v-for="form in forms"
+      :key="form.link"
+      class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded mx-4 mb-4"
+      @click="form.link"
     >
-      <Form v-for="form in forms" :key="form.link" :form="form" />
-    </div>
-  </section>
+      >
+      <a :href="form.link" target="_blank" rel="noopener noreferrer">{{
+        form.name
+      }}</a>
+    </button>
+  </div>
 </template>
 <script>
-import Form from './From.vue'
-
 export default {
   data() {
     return {
       forms: [
         {
-          name: 'Recommed tools',
+          name: 'Recommed a tool',
           link: 'https://airtable.com/shr8kjfU6Mb31u8a7',
           description:
             'Complete this form to contribute to a list of recommended digital tools that are used by communities',
         },
         {
-          name: 'Recommend resources',
+          name: 'Recommend a resource',
           link: 'https://airtable.com/shrr4zKdzA5RIL3YG',
           description:
             'Complete this form to contribute to a list of recommended a resources or guides that could be helpful to communities',
         },
-        {
-          name: 'Recommend hardware',
-          link: '/',
-          description: 'This form is coming soon',
-        },
+        // {
+        //   name: 'Recommend hardware',
+        //   link: '/',
+        //   description: 'This form is coming soon',
+        //   disabled: true,
+        // },
       ],
     }
   },
