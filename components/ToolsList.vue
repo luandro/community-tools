@@ -33,7 +33,7 @@ export default {
         apiKey: this.$config.apiKey,
       })
       var base = Airtable.base(this.$config.baseId)
-      base('Tools')
+      base('Software')
         .select({
           view: 'Grid view',
         })
@@ -46,6 +46,9 @@ export default {
             const description = record.get('Description')
             const url = record.get('website link')
             const categories = record.get('Name (from Categories)')
+            const logo =
+              record.get('Logo (link)') ||
+              'https://source.unsplash.com/random/150×150'
             if (name) {
               tools.push({
                 id,
@@ -54,7 +57,8 @@ export default {
                 description,
                 url,
                 categories,
-                logo: 'https://source.unsplash.com/random/150×150',
+                logo,
+                // logo: 'https://source.unsplash.com/random/150×150',
               })
             }
           })

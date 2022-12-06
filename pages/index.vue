@@ -15,9 +15,13 @@
           Community Tools
         </h1>
         <p class="mb-8 leading-relaxed">
-          A list of recommended digital tools that are used by communities
+          This is a placeholder site to supoprt the collection of digital tools,
+          resources and hardware that are recommended used by community members
+          and practioners for use by grassroots communities seeking digital
+          autonomy
         </p>
       </div>
+      <ToolForms />
       <ToolsList />
     </div>
   </section>

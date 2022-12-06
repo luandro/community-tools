@@ -59,7 +59,7 @@ export default {
       })
       var base = Airtable.base(this.$config.baseId)
       try {
-        const { fields } = await base('Tools').find(this.$route.params.id)
+        const { fields } = await base('Software').find(this.$route.params.id)
         if (fields.Name) {
           this.tool = {
             id: fields.id,
